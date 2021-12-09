@@ -4,6 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 declare var operacion:any;
 declare var cedula_vali:any;
 declare var retorno1:any;
+declare var retorno_nombre:any
 declare var validar_nombre:any;
 
 
@@ -22,12 +23,8 @@ export class LoginComponent implements OnInit {
  retorno_nombre="";
 
  datosformulario =new FormGroup({
-  sexo_usuario: new FormControl(''),
-  cedula: new FormControl(''),
-  nombre: new FormControl(''),
-  username: new FormControl(''),
-  email: new FormControl(''),
-  password: new FormControl(''),
+    username: new FormControl(''),
+    contrasena: new FormControl(''),
  });
 
 
@@ -45,15 +42,8 @@ export class LoginComponent implements OnInit {
   }
 
   recibir_datos(){
-  
-  let cedula=this.datosformulario.value.cedula;
-  let retorno_valido = cedula_vali(cedula);
-  this.retorno1=retorno_valido;
-  
-   
-  let nombre_retorno_valido=this.datosformulario.value.nombre;
-  let nombre_retorno_valido1= validar_nombre(nombre_retorno_valido);
-  this.retorno_nombre=nombre_retorno_valido1;
+  let username=this.datosformulario.value.username;
+  let contrasena=this.datosformulario.value.contrasena;
   }
   constructor() { }
 

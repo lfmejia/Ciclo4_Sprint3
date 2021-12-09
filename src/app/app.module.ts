@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -13,6 +13,8 @@ import { ReservaComponent } from './grupo13/reserva/reserva.component';
 import { ConsultarReservaComponent } from './grupo13/consultar-reserva/consultar-reserva.component';
 import { ContactoComponent } from './grupo13/contacto/contacto.component';
 import { CheckingComponent } from './grupo13/checking/checking.component';
+import { ServiciogeneralService } from './grupo13/serviciogeneral.service';
+
 
 @NgModule({
   declarations: [
@@ -32,8 +34,9 @@ import { CheckingComponent } from './grupo13/checking/checking.component';
     FormsModule, 
     ReactiveFormsModule,
     RouterModule,
+    HttpClientModule,
   ],
-  providers: [],
+  providers: [ServiciogeneralService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
